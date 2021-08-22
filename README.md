@@ -1,4 +1,5 @@
-
+#Fusion
+Code for the paper https://aclanthology.org/2021.findings-acl.184/.
 ## Dependencies
 * Python 3.6, though 2.7 should hopefully work as well
 * pytorch 0.3.0
