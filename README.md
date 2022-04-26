@@ -1,5 +1,13 @@
 # Fusion: Towards Automated ICD Coding via Feature Compression
 Code for the paper Fusion: Towards Automated ICD Coding via Feature Compression https://aclanthology.org/2021.findings-acl.184/.
+## CORRECTION！！！
+The original experiment result contains problems in defining the training set for the 50 settings.
+
+Please refer to the following result for the 50 settings.
+
+|  Macro AUC | Micro AUC | Macro F1 | Micro F1 | pre@5 |
+|  ----  | ----  |  ----  | ----   | ----  |
+| 0.894  | 0.924 | 0.598  | 0.659  | 0.635 |
 ## Dependencies
 * Python 3.6, though 2.7 should hopefully work as well
 * pytorch 0.3.0
