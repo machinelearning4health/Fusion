@@ -79,7 +79,7 @@ if __name__ == "__main__":
     train_instances = prepare_instance_func(dicts, args.data_path, args, args.MAX_LENGTH)
     print("train_instances {}".format(len(train_instances)))
     if args.version != 'mimic2':
-        dev_instances = prepare_instance_func(dicts, args.data_path.replace('train','dev'), args, args.MAX_LENGTH)
+        dev_instances = prepare_instance_func(dicts, args.data_path.replace('train','dev').replace('full', args.Y), args, args.MAX_LENGTH)
         print("dev_instances {}".format(len(dev_instances)))
     else:
         dev_instances = None
@@ -133,12 +133,12 @@ if __name__ == "__main__":
 
         # test on dev
         evaluation_start = time.time()
-        metrics = test(args, model, args.data_path, fold, args.gpu, dicts, dev_loader)
-        metrics_te = test(args, model, args.data_path, 'test', args.gpu, dicts, test_loader)
+        metrics = test(args, model, args.data_path.replace('full', args.Y), fold, args.gpu, dicts, dev_loader)
+        metrics_te = test(args, model, args.data_path.replace('full', args.Y), 'test', args.gpu, dicts, test_loader)
         evaluation_finish = time.time()
         print("evaluation finish in %.2fs" % (evaluation_finish - evaluation_start))
         if test_only or epoch == args.n_epochs - 1:
-            metrics_te = test(args, model, args.data_path, "test", args.gpu, dicts, test_loader)
+            metrics_te = test(args, model, args.data_path.replace('full', args.Y), "test", args.gpu, dicts, test_loader)
         else:
             metrics_te = defaultdict(float)
         metrics_tr = {'loss': loss}
