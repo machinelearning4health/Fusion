@@ -37,9 +37,10 @@ Now, make sure your python path includes the base directory of this repository. 
 ## Training the model used in our experiment
 
 Make a new path ./predictions/my_model
+
 CD to that path and use the following example to train
 
-example `python3 ../../main.py -data_path ../../mimicdata/mimic3/train_full.csv -vocab ../../mimicdata/mimic3/vocab.csv -Y full -model FlowHidden -embed_file ../../mimicdata/mimic3/processed_full.embed -criterion prec_at_8 -gpu 0 -tune_wordemb -batch_size 16 -use_layer_norm -use_attention_pool -pre_level lv2`
+example `python3 ../../main.py -data_path ../../mimicdata/mimic3/train_full.csv -vocab ../../mimicdata/mimic3/vocab.csv -Y full -model FlowHidden -embed_file ../../mimicdata/mimic3/processed_full.embed -criterion prec_at_8 -gpu 0 -tune_wordemb -batch_size 16 -use_layer_norm -use_attention_pool -pre_level lv2 -use_transformer`
 
 
 
