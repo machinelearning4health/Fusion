@@ -1171,8 +1171,6 @@ def get_pcodes(hids, c2ind):
 
     return pcodes, pcodes_mask_final, pcodes_vector
 
-
-from pytorch_pretrained_bert import BertTokenizer
 def prepare_instance_bert(dicts, filename, args, max_length):
     ind2w, w2ind, ind2c, c2ind = dicts['ind2w'], dicts['w2ind'], dicts['ind2c'], dicts['c2ind']
     instances = []
