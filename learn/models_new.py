@@ -1085,7 +1085,7 @@ class MultiResCNNHidden(nn.Module):
             xavier_uniform(tmp.weight)
             one_channel.add_module('baseconv', tmp)
             if args.use_attention_pool:
-                for idx in args.compressor_layer:
+                for idx in range(args.compressor_layer):
                     tmp = AttentionBolckV2(self.word_rep.feature_size, args.pool_size, True)
                     one_channel.add_module('basevonb-pool-{}'.format(idx), tmp)
 
