@@ -84,7 +84,7 @@ if __name__ == "__main__":
         print("dev_instances {}".format(len(dev_instances)))
     else:
         dev_instances = None
-    test_instances = prepare_instance_func(dicts, args.data_path.replace('train','test'), args, args.MAX_LENGTH)
+    test_instances = prepare_instance_func(dicts, args.data_path.replace('train','test').replace("full", args.Y), args, args.MAX_LENGTH)
     print("test_instances {}".format(len(test_instances)))
 
     if args.model.find("bert") != -1:
