@@ -629,11 +629,11 @@ def load_lookups(args):
         ind2c = {i:c for i,c in enumerate(sorted(codes))}
 
     c2ind = {c:i for i,c in ind2c.items()}
-    e2ind = pickle.load(open('%s/entity2id.pkl' % args.MIMIC_3_DIR, 'rb'))
-    icd_diction_lv0 = pickle.load(open('%s/icd9_category.pk' % args.MIMIC_3_DIR, 'rb'))
-    prob_matrix = np.load('%s/co-occurrence.npy' % args.MIMIC_3_DIR)
-    confidence_matrix = np.load('%s/a-freq.npy' % args.MIMIC_3_DIR)
-    dicts = {'ind2w': ind2w, 'w2ind': w2ind, 'ind2c': ind2c, 'c2ind': c2ind, 'e2ind': e2ind, 'icd_diction': icd_diction_lv0, 'prob_matrix': prob_matrix, 'freq_matrix': confidence_matrix}
+    e2ind = {}
+    #icd_diction_lv0 = pickle.load(open('%s/icd9_category.pk' % args.MIMIC_3_DIR, 'rb'))
+    #prob_matrix = np.load('%s/co-occurrence.npy' % args.MIMIC_3_DIR)
+    #confidence_matrix = np.load('%s/a-freq.npy' % args.MIMIC_3_DIR)
+    dicts = {'ind2w': ind2w, 'w2ind': w2ind, 'ind2c': ind2c, 'c2ind': c2ind, 'e2ind': e2ind}
 
     return dicts
 
