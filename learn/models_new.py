@@ -44,9 +44,9 @@ class WordRep(nn.Module):
         self.embed_drop = nn.Dropout(p=args.dropout)
 
         self.conv_dict = {1: [self.feature_size, args.num_filter_maps],
-                     2: [self.feature_size, 100, args.num_filter_maps],
-                     3: [self.feature_size, 150, 100, args.num_filter_maps],
-                     4: [self.feature_size, 200, 150, 100, args.num_filter_maps]
+                     2: [self.feature_size, 2*args.num_filter_maps, args.num_filter_maps],
+                     3: [self.feature_size, 3*args.num_filter_maps, 2*args.num_filter_maps, args.num_filter_maps],
+                     4: [self.feature_size, 4*args.num_filter_maps, 3*args.num_filter_maps, 2*args.num_filter_maps, args.num_filter_maps]
                      }
 
 
@@ -1091,7 +1091,7 @@ class MultiResCNNHidden(nn.Module):
 
             conv_dimension = self.word_rep.conv_dict[args.conv_layer]
             for idx in range(args.conv_layer):
-                tmp = ResidualBlockHidden(conv_dimension[idx], conv_dimension[idx + 1], filter_size, 1, True, args.dropout if args.use_transformer else 0.0, use_layer_norm=args.use_layer_norm, is_relu=args.use_relu)
+                tmp = ResidualBlockHidden(conv_dimension[idx], conv_dimension[idx + 1], filter_size, 1, True, args.dropout if not args.use_transformer else 0.0, use_layer_norm=args.use_layer_norm, is_relu=args.use_relu)
                 one_channel.add_module('resconv-{}'.format(idx), tmp)
             self.conv.add_module('channel-{}'.format(filter_size), one_channel)
 
