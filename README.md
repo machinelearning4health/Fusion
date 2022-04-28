@@ -3,13 +3,13 @@ Code for the paper Fusion: Towards Automated ICD Coding via Feature Compression 
 ## CORRECTION！！！
 The original experiment result contains problems in defining the training set for the 50 settings.
 
-Please refer to the following result for the pure 50 settings.
+Please refer to the following result for the original 50 settings.
 
 |  Macro AUC | Micro AUC | Macro F1 | Micro F1 | pre@5 |
 |  ----  | ----  |  ----  | ----   | ----  |
 | 0.906  | 0.932 | 0.614  | 0.669  | 0.647 |
 
-Please refer to the following result for the enhanced 50 settings.
+Please refer to the following result for the full 50 settings.
 
 |  Macro AUC | Micro AUC | Macro F1 | Micro F1 | pre@5 |
 |  ----  | ----  |  ----  | ----   | ----  |
