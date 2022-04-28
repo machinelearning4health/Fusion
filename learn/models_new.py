@@ -31,7 +31,7 @@ class WordRep(nn.Module):
         else:
             # add 2 to include UNK and PAD
             self.embed = nn.Embedding(len(dicts['w2ind']) + 2, args.embed_size, padding_idx=0)
-        self.feature_size = self.embed.embedding_dim
+        self.feature_size = self.embed.embedding_dim*args.compressor_layer
 
         self.use_elmo = args.use_elmo
         if self.use_elmo:
@@ -1080,7 +1080,7 @@ class MultiResCNNHidden(nn.Module):
         for filter_size in filter_sizes:
             filter_size = int(filter_size)
             one_channel = nn.ModuleList()
-            tmp = nn.Conv1d(self.word_rep.feature_size, self.word_rep.feature_size, kernel_size=filter_size,
+            tmp = nn.Conv1d(self.word_rep.feature_size//args.compressor_layer, self.word_rep.feature_size, kernel_size=filter_size,
                             padding=int(floor(filter_size / 2)))
             xavier_uniform(tmp.weight)
             one_channel.add_module('baseconv', tmp)

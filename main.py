@@ -138,6 +138,8 @@ if __name__ == "__main__":
         evaluation_finish = time.time()
         print("evaluation finish in %.2fs" % (evaluation_finish - evaluation_start))
         if test_only or epoch == args.n_epochs - 1:
+            args.test_model = '%s/model_best_%s.pth' % (model_dir, args.criterion)
+            model = pick_model(args, dicts)
             metrics_te = test(args, model, args.data_path.replace('full', args.Y), "test", args.gpu, dicts, test_loader)
         else:
             metrics_te = defaultdict(float)
