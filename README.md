@@ -7,7 +7,7 @@ Please refer to the following result for the pure 50 settings.
 
 |  Macro AUC | Micro AUC | Macro F1 | Micro F1 | pre@5 |
 |  ----  | ----  |  ----  | ----   | ----  |
-| 0.894  | 0.924 | 0.598  | 0.659  | 0.635 |
+| 0.906  | 0.932 | 0.614  | 0.669  | 0.647 |
 
 Please refer to the following result for the enhanced 50 settings.
 
