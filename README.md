@@ -3,11 +3,17 @@ Code for the paper Fusion: Towards Automated ICD Coding via Feature Compression 
 ## CORRECTION！！！
 The original experiment result contains problems in defining the training set for the 50 settings.
 
-Please refer to the following result for the 50 settings.
+Please refer to the following result for the original 50 settings.
 
 |  Macro AUC | Micro AUC | Macro F1 | Micro F1 | pre@5 |
 |  ----  | ----  |  ----  | ----   | ----  |
-| 0.894  | 0.924 | 0.598  | 0.659  | 0.635 |
+| 0.909  | 0.933 | 0.619  | 0.674  | 0.647 |
+
+Please refer to the following result for the full 50 settings.
+
+|  Macro AUC | Micro AUC | Macro F1 | Micro F1 | pre@5 |
+|  ----  | ----  |  ----  | ----   | ----  |
+|0.931   | 0.950 |0.683   | 0.725  | 0.679 |
 ## Dependencies
 * Python 3.6, though 2.7 should hopefully work as well
 * pytorch 0.3.0
