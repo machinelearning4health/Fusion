@@ -1,9 +1,5 @@
 # Fusion: Towards Automated ICD Coding via Feature Compression
 Code for the paper Fusion: Towards Automated ICD Coding via Feature Compression https://aclanthology.org/2021.findings-acl.184/.
-## CORRECTION！！！
-The original experiment result contains problems in defining the training set for the 50 settings.
-
-Please refer to the following result for the original 50 settings.
 
 |  Macro AUC | Micro AUC | Macro F1 | Micro F1 | pre@5 |
 |  ----  | ----  |  ----  | ----   | ----  |
